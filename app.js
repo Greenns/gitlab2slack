@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 
 function sendNotif(msg, name) {
      slack.send({
-          text: msg,
+          attachments: [{"text": msg}],
           channel: getChannel,
           username: name,
-          icon_url: 'http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/022014/untitled-1_206.png'
+          icon_url: 'http://pix.iemoji.com/images/emoji/apple/8.3/256/extraterrestrial-alien.png'
      });
 }
 
@@ -48,7 +48,7 @@ app.post('/gateway', function(req, res) {
     }
 
     if(isCorect(msg)){
-      sendNotif(msg + ' par' + author,'ModBot [' +project+']');
+      sendNotif('&gt;['+project+'] ' +msg + ' by ' + author,'UHBot');
     }
         res.sendStatus(200);
 
