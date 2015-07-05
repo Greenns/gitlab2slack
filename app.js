@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 function sendNotif(msg, name) {
      slack.send({
-          attachments: [{"text": msg}],
+-         text: msg,
           channel: getChannel,
           username: name,
           icon_url: 'http://pix.iemoji.com/images/emoji/apple/8.3/256/extraterrestrial-alien.png'
@@ -20,7 +20,7 @@ function sendNotif(msg, name) {
 }
 
 function isCorect(messageToSend){
-  if(messageToSend.indexOf('merge') > -1 || messageToSend.indexOf('git.') > -1){
+  if(messageToSend.indexOf('merge') > -1 || messageToSend.indexOf('git.') > -1 || messageToSend.indexOf('pom.xml') > -1 || messageToSend.indexOf('.yml') > -1){
   return false;
   }
   return true;
