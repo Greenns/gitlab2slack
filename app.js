@@ -30,10 +30,13 @@ app.post('/gateway', function(req, res) {
 
   var msg;
   var author;
+  var project;
 
 
     switch (req.body.object_kind) {
       case 'push':
+
+        project = req.body.repository.name;
         req.body.commits.forEach(function(item) {
             author = item.author.name,
             msg = item.message
@@ -45,7 +48,7 @@ app.post('/gateway', function(req, res) {
     }
 
     if(isCorect(msg)){
-      sendNotif(msg + ' par' + author,'ModBot [' +author+']');
+      sendNotif(msg + ' par' + author,'ModBot [' +project+']');
     }
         res.sendStatus(200);
 
