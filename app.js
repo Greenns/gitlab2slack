@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 function sendNotif(msg, name) {
      slack.send({
--         text: msg,
+          text: msg,
           channel: getChannel,
           username: name,
           icon_url: 'http://pix.iemoji.com/images/emoji/apple/8.3/256/extraterrestrial-alien.png'
