@@ -10,12 +10,13 @@ var getChannel = process.env.SLACK_CHANNEL;
 
 app.use(bodyParser.json());
 
-function sendNotif(msg, name) {
+function sendNotif(msg, name, author, project) {
      slack.send({
-          text: msg,
+          text: 'Nouveauté:',
           channel: getChannel,
           username: name,
-          icon_url: 'http://pix.iemoji.com/images/emoji/apple/8.3/256/extraterrestrial-alien.png'
+          attachments: [{"pretext": "", "text": "" + msg + "", "color":"#01B0F0", "fields": [{"title": "Fait par:", "value": "" + author + "", "short": "true"}, {"title": "Projet:", "value": "" + project + "", "short": "true"}]}],
+          icon_url: 'http://img15.hostingpics.net/pics/834337TechnicalSupport64.png'
      });
 }
 
@@ -48,7 +49,7 @@ app.post('/gateway', function(req, res) {
     }
 
     if(isCorect(msg)){
-      sendNotif('&gt;['+project+'] ' +msg + ' by ' + author,'UHBot');
+      sendNotif(msg, 'UHBot', author, project);
     }
         res.sendStatus(200);
 
