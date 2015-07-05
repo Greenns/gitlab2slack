@@ -1,0 +1,16 @@
+{
+  "name": "gitlab2slack",
+  "description": "Send gitlab commits message to Slack",
+  "repository": "https://github.com/Greenns/gitlab2slack/",
+  "keywords": ["slack", "gitlab", "javascript", "heroku"],
+  "env": {
+    "SLACK_HOOK_URL": {
+      "description": "slack webhook url",
+      "required": true
+    },
+    "SLACK_CHANNEL": {
+      "description": "slack chanel",
+      "required": true
+    }
+  }
+}

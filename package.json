@@ -1,0 +1,23 @@
+{
+  "name": "gitlab2slack",
+  "description": "Send gitlab commits message to Slack",
+  "version": "0.0.3",
+  "private": true,
+  "main": "app.js",
+  "dependencies": {
+  	"express": "*",
+    "body-parser": "*",
+    "node-trello": "*",
+    "node-slack": "*"
+  },
+  "env": {
+    "SLACK_HOOK_URL": {
+      "description": "slack webhook url",
+      "required": true
+    },
+    "SLACK_CHANNEL": {
+      "description": "slack chanel",
+      "required": true
+    }
+  }
+}
