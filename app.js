@@ -1,10 +1,3 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var Slack = require('node-slack');
-
-var slack = new Slack(process.env.SLACK_HOOK_URL,'');
-
-var app = express();
 var port = process.env.PORT || 3000;
 var getChannel = process.env.SLACK_CHANNEL;
 
@@ -21,7 +14,7 @@ function sendNotif(msg, name, author, project) {
 }
 
 function isCorect(messageToSend){
-  if(messageToSend.indexOf('merge') > -1 || messageToSend.indexOf('git.') > -1 || messageToSend.indexOf('pom.xml') > -1 || messageToSend.indexOf('.yml') > -1){
+  if(messageToSend.indexOf('merge') > -1 || messageToSend.indexOf('git.') > -1 || messageToSend.indexOf('pom.xml') > -1 || messageToSend.indexOf('.yml') > -1 || messageToSend.indexOf('!hide') > -1){
   return false;
   }
   return true;
