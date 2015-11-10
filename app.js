@@ -5,7 +5,7 @@ app.use(bodyParser.json());
 
 function sendNotif(msg, name, author, project) {
      slack.send({
-          text: req.body.repository.name,
+          text: 'Nouveau push :',
           channel: getChannel,
           username: name,
           attachments: [{"pretext": "", "text": "" + msg + "", "color":"#607D8B", "fields": [{"title": "Fait par:", "value": "" + author + "", "short": "true"}, {"title": "Projet:", "value": "" + project + "", "short": "true"}]}],
