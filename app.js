@@ -8,7 +8,7 @@ function sendNotif(msg, name, author, project) {
           text: 'Nouveauté:',
           channel: getChannel,
           username: name,
-          attachments: [{"pretext": "", "text": "" + msg + "", "color":"#01B0F0", "fields": [{"title": "Fait par:", "value": "" + author + "", "short": "true"}, {"title": "Projet:", "value": "" + project + "", "short": "true"}]}],
+          attachments: [{"pretext": "", "text": "" + msg + "", "color":"#01B0F0", "fields": [{"title": "Fait par:", "value": "MrAllerre", "short": "true"}, {"title": "Projet:", "value": "" + project + "", "short": "true"}]}],
           icon_url: 'http://img15.hostingpics.net/pics/834337TechnicalSupport64.png'
      });
 }
