@@ -5,11 +5,11 @@ app.use(bodyParser.json());
 
 function sendNotif(msg, name, author, project) {
      slack.send({
-          text: 'Nouveau push :',
+          text: 'Nouveauté:',
           channel: getChannel,
           username: name,
-          attachments: [{"pretext": "", "text": "" + msg + "", "color":"#607D8B", "fields": [{"title": "Fait par:", "value": "" + author + "", "short": "true"}, {"title": "Projet:", "value": "" + project + "", "short": "true"}]}],
-          icon_url: 'http://img15.hostingpics.net/pics/802698commands.png'
+          attachments: [{"pretext": "", "text": "" + msg + "", "color":"#01B0F0", "fields": [{"title": "Fait par:", "value": "" + author + "", "short": "true"}, {"title": "Projet:", "value": "" + project + "", "short": "true"}]}],
+          icon_url: 'http://img15.hostingpics.net/pics/834337TechnicalSupport64.png'
      });
 }
 
