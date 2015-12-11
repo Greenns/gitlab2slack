@@ -1,3 +1,8 @@
+var express = require('express');
+var bodyParser = require('body-parser');
+var Slack = require('node-slack');
+var slack = new Slack(process.env.SLACK_HOOK_URL,'');
+var app = express();
 var port = process.env.PORT || 3000;
 var getChannel = process.env.SLACK_CHANNEL;
 
